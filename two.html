@@ -1,68 +1,104 @@
-# -*- coding: utf-8 -*-
-"""
-美容初级师备考助手：护肤品成分速查表
-知识点涵盖：保湿、美白、抗老、祛痘、舒缓
-"""
-
-# 定义成分数据库
-ingredients_db = {
-    "基础保湿与屏障修复": [
-        {"名称": "透明质酸", "别名": "玻尿酸", "作用": "高效保湿，吸收水分填充间隙", "备考提示": "天然保湿因子(NMF)，吸水性强"},
-        {"名称": "神经酰胺", "别名": "分子钉", "作用": "修复屏障，填充角质细胞间隙", "备考提示": "敏感肌、屏障受损首选"},
-        {"名称": "角鲨烷", "别名": "深海鲨鱼肝油提取物", "作用": "形成保护膜，柔肤滋润", "备考提示": "稳定性好，亲肤，注意与角鲨烯区分"},
-        {"名称": "甘油", "别名": "丙三醇", "作用": "吸湿保湿，抓取水分", "备考提示": "基础保湿剂，浓度过高会倒吸水分"}
-    ],
-    "美白与提亮": [
-        {"名称": "烟酰胺", "别名": "维生素B3", "作用": "阻断黑色素转移，抗炎修复", "备考提示": "需建立耐受，不耐受可能发红"},
-        {"名称": "维生素C", "别名": "抗坏血酸", "作用": "还原黑色素，强效抗氧化", "备考提示": "怕光怕热，建议早间使用"},
-        {"名称": "氨甲环酸", "别名": "传明酸", "作用": "抑制黑色素活性，针对色斑", "备考提示": "对黄褐斑、顽固痘印效果好"},
-        {"名称": "熊果苷", "别名": "熊果素", "作用": "抑制酪氨酸酶，源头阻断", "备考提示": "相对温和的退黑成分"}
-    ],
-    "抗衰老与再生": [
-        {"名称": "维A醇", "别名": "视黄醇", "作用": "加速代谢，刺激胶原再生", "备考提示": "具有光敏性，仅限夜间使用，孕妇慎用"},
-        {"名称": "胜肽", "别名": "胶原蛋白肽", "作用": "信号传递，促进胶原合成", "备考提示": "种类繁多，相对温和"},
-        {"名称": "玻色因", "别名": "Pro-Xylane", "作用": "促进粘多糖生成，充盈皮肤", "备考提示": "欧莱雅集团专利成分"},
-        {"名称": "维生素E", "别名": "生育酚", "作用": "抗氧化，保护细胞膜", "备考提示": "常与VC搭配，协同增效"}
-    ],
-    "祛痘与控油": [
-        {"名称": "水杨酸", "别名": "BHA", "作用": "脂溶性，疏通毛孔，溶解油脂", "备考提示": "适合油性皮肤去黑头粉刺"},
-        {"名称": "壬二酸", "别名": "杜鹃花酸", "作用": "抗菌抗炎，抑制痤疮丙酸杆菌", "备考提示": "对炎性痘痘和红痘印有效"},
-        {"名称": "锌", "别名": "PCA锌", "作用": "调节皮脂分泌，控油", "备考提示": "常见于油皮使用的控油产品"}
-    ],
-    "舒缓与抗炎": [
-        {"name": "积雪草", "en": "Centella Asiatica", "action": "促进愈合，缓解泛红", "note": "敏感肌修复热门成分"},
-        {"name": "泛醇", "en": "Panthenol", "action": "舒缓止痒，保湿", "note": "维生素B5前体，安全性高"},
-        {"name": "红没药醇", "en": "Bisabolol", "action": "抗炎镇静，缓解红肿", "note": "来源于春黄菊，常用于晒后修复"}
-    ]
-}
-
-def study_session():
-    """
-    模拟学习会话，打印出整理好的知识点
-    """
-    print("="*50)
-    print("      美容初级师备考：核心成分速记表")
-    print("="*50)
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>护肤品成分速查表</title>
+    <style>
+        body {
+            font-family: system-ui, 'Segoe UI', sans-serif;
+            background: #fef7f0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #d81b60;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th {
+            background-color: #dc8e65;
+            color: white;
+            padding: 12px;
+            font-size: 18px;
+        }
+        td {
+            border: 1px solid #f0e0d4;
+            padding: 10px;
+            vertical-align: top;
+        }
+        .category-title {
+            background-color: #fce4ec;
+            font-size: 20px;
+            font-weight: bold;
+            color: #d81b60;
+        }
+        .note {
+            color: #6b4c36;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📚 护肤品成分速查表（初级美容师备考）</h1>
     
-    for category, ingredients in ingredients_db.items():
-        print(f"\n【 {category} 】")
-        print("-" * 46)
-        print(f"{'成分名称':<10} | {'主要作用/机制':<25} | {'备考/特点':<20}")
-        print("-" * 46)
-        for ing in ingredients:
-            # 确保每个字段都存在，防止KeyError
-            name = ing.get("名称", ing.get("name", "N/A"))
-            action = ing.get("作用", ing.get("action", "N/A"))
-            note = ing.get("备考提示", ing.get("note", "N/A"))
-            print(f"{name:<10} | {action:<25} | {note:<20}")
-        print("-" * 46)
-
-    print("\n【考试技巧】")
-    print("1. 牢记'作用机制'：考试常考为什么某种成分能美白（抑制酪氨酸酶/阻断转移）。")
-    print("2. 区分易混淆词：角鲨烷（好）vs 角鲨烯（易致痘）；维A醇（抗老）vs 烟酰胺（美白）。")
-    print("3. 记住'黄金搭配'：VC+VE（协同抗氧化），早C晚A（日防夜修）。")
-
-# 运行复习程序
-if __name__ == "__main__":
-    study_session()
-    print("\n提示：以上内容涵盖了初级美容师考试中常见的功效成分，建议结合教材第3章'化妆品原料'复习。")
+    <!-- 基础保湿与屏障修复 -->
+    <table>
+        <tr class="category-title"><td colspan="3">💧 基础保湿与屏障修复</td></tr>
+        <tr><th>成分名称</th><th>主要作用</th><th>备考提示</th></tr>
+        <tr><td>透明质酸（玻尿酸）</td><td>高效保湿，吸收水分</td><td>天然保湿因子，吸水性强</td></tr>
+        <tr><td>神经酰胺</td><td>修复屏障，填充角质细胞间隙</td><td>敏感肌、屏障受损首选</td></tr>
+        <tr><td>角鲨烷</td><td>形成保护膜，柔肤滋润</td><td>稳定性好，亲肤</td></tr>
+        <tr><td>甘油</td><td>吸湿保湿，抓取水分</td><td>基础保湿剂</td></tr>
+    </table>
+    
+    <!-- 美白与提亮 -->
+    <table>
+        <tr class="category-title"><td colspan="3">✨ 美白与提亮</td></tr>
+        <tr><th>成分名称</th><th>主要作用</th><th>备考提示</th></tr>
+        <tr><td>烟酰胺</td><td>阻断黑色素转移，抗炎修复</td><td>需建立耐受</td></tr>
+        <tr><td>维生素C</td><td>还原黑色素，抗氧化</td><td>怕光怕热，建议早间使用</td></tr>
+        <tr><td>氨甲环酸（传明酸）</td><td>抑制黑色素活性</td><td>对黄褐斑有效</td></tr>
+        <tr><td>熊果苷</td><td>抑制酪氨酸酶</td><td>相对温和</td></tr>
+    </table>
+    
+    <!-- 抗衰老与再生 -->
+    <table>
+        <tr class="category-title"><td colspan="3">🌟 抗衰老与再生</td></tr>
+        <tr><th>成分名称</th><th>主要作用</th><th>备考提示</th></tr>
+        <tr><td>维A醇（视黄醇）</td><td>加速代谢，刺激胶原再生</td><td>仅限夜间使用，孕妇慎用</td></tr>
+        <tr><td>胜肽</td><td>促进胶原合成</td><td>相对温和</td></tr>
+        <tr><td>玻色因</td><td>促进粘多糖生成</td><td>欧莱雅专利</td></tr>
+        <tr><td>维生素E</td><td>抗氧化，保护细胞膜</td><td>常与VC搭配</td></tr>
+    </table>
+    
+    <!-- 祛痘与控油 -->
+    <table>
+        <tr class="category-title"><td colspan="3">⚡ 祛痘与控油</td></tr>
+        <tr><th>成分名称</th><th>主要作用</th><th>备考提示</th></tr>
+        <tr><td>水杨酸（BHA）</td><td>疏通毛孔，溶解油脂</td><td>适合油性皮肤</td></tr>
+        <tr><td>壬二酸</td><td>抗菌抗炎</td><td>对炎性痘痘有效</td></tr>
+        <tr><td>锌（PCA锌）</td><td>调节皮脂分泌</td><td>控油</td></tr>
+    </table>
+    
+    <!-- 考试技巧 -->
+    <div style="background-color: #fce4ec; padding: 15px; border-radius: 15px; margin-top: 20px;">
+        <h3>📝 考试技巧</h3>
+        <p>1. 牢记“作用机制”：为什么能美白？（抑制酪氨酸酶/阻断转移）</p>
+        <p>2. 区分易混淆词：角鲨烷（好）vs 角鲨烯（易致痘）；维A醇（抗老）vs 烟酰胺（美白）</p>
+        <p>3. 记住“黄金搭配”：VC+VE（协同抗氧化），早C晚A（日防夜修）</p>
+    </div>
+</div>
+</body>
+</html>
