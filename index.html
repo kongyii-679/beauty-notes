@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>国家职业资格 · 美容师初级考证宝典 | 理论实操全覆盖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+            background: #fef7f0;  /* 柔肤色调 */
+            color: #2c2418;
+            line-height: 1.5;
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.5rem 1.8rem 3rem;
+        }
+
+        /* header 装饰 */
+        .hero {
+            background: linear-gradient(135deg, #fff0e6 0%, #ffe2d4 100%);
+            border-radius: 2rem;
+            padding: 2rem 2rem 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+            border: 1px solid #ffe0ce;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(120deg, #a65133, #c36f48);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-badge {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1rem 0 1rem;
+        }
+
+        .badge {
+            background: #ffffffcc;
+            backdrop-filter: blur(2px);
+            padding: 0.3rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #aa5e3b;
+            border: 0.5px solid #ffd3bc;
+        }
+
+        .sub {
+            color: #6b4c36;
+            border-left: 4px solid #e2a176;
+            padding-left: 1rem;
+            margin-top: 0.8rem;
+            font-weight: 400;
+        }
+
+        /* 卡片通用样式 */
+        .card {
+            background: #ffffff;
+            border-radius: 1.6rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.02);
+            padding: 1.6rem 1.8rem;
+            margin-bottom: 2rem;
+            transition: all 0.2s ease;
+            border: 1px solid #f5e4d8;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 650;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border-left: 5px solid #dc8e65;
+            padding-left: 1rem;
+            color: #3e2c1e;
+        }
+
+        .card-title i {
+            font-size: 1.5rem;
+        }
+
+        /* 网格布局 */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+        }
+
+        /* 考试信息区 */
+        .info-strip {
+            background: #faf0e9;
+            border-radius: 1.2rem;
+            padding: 1rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.8rem;
+            font-weight: 500;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: baseline;
+            gap: 0.4rem;
+            font-size: 0.9rem;
+        }
+
+        .info-label {
+            color: #a7623e;
+            background: #ffefe5;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+        }
+
+        .highlight {
+            color: #c2572c;
+            font-weight: 700;
+        }
+
+        /* 表格与知识点 */
+        .knowledge-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .knowledge-table th, .knowledge-table td {
+            border-bottom: 1px solid #f0e0d4;
+            padding: 0.8rem 0.4rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .knowledge-table th {
+            font-weight: 600;
+            color: #986b4c;
+            width: 28%;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #fef3ec;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #b45f38;
+        }
+
+        .question-block {
+            background: #fefaf7;
+            border-radius: 1.2rem;
+            padding: 1rem 1.3rem;
+            margin-bottom: 1.2rem;
+            border-left: 4px solid #e2a176;
+        }
+
+        .q-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .answer {
+            color: #2b6e3c;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            background: #eef5ea;
+            padding: 0.4rem 0.8rem;
+            border-radius: 1rem;
+            display: inline-block;
+        }
+
+        .step-progress {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 130px;
+            background: #fdf8f4;
+            border-radius: 1rem;
+            padding: 0.8rem;
+            text-align: center;
+        }
+
+        .step-num {
+            background: #dc8e65;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        hr {
+            margin: 1rem 0;
+            border: none;
+            height: 1px;
+            background: #f0dfd2;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.75rem;
+            color: #aa8870;
+            border-top: 1px solid #f0dfd2;
+            padding-top: 1.8rem;
+        }
+
+        @media (max-width: 680px) {
+            .container {
+                padding: 1rem;
+            }
+            .card {
+                padding: 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 头部 美容师初级认证信息 -->
+    <div class="hero">
+        <h1>💆‍♀️ 美容师 · 初级（五级）<br>国家职业技能鉴定备考</h1>
+        <div class="hero-badge">
+            <span class="badge">📌 人社部认证</span>
+            <span class="badge">💯 理论+实操双科≥60分合格</span>
+            <span class="badge">📖 国家职业标准2018版</span>
+        </div>
+        <div class="sub">✅ 涵盖皮肤护理 · 修饰美容 · 仪器操作 · 接待咨询 · 日妆造型<br>🔥 初级核心技能全覆盖，助你一次通关拿证</div>
+    </div>
+
+    <!-- 考试形式 + 核心数据 -->
+    <div class="info-strip">
+        <div class="info-item"><span class="info-label">📝 理论考试</span> 90~100分钟 · 单选/多选/判断 · 满分100</div>
+        <div class="info-item"><span class="info-label">✋ 实操考核</span> 90分钟 · 现场操作 · 满分100</div>
+        <div class="info-item"><span class="info-label">🎯 合格线</span> <span class="highlight">双科≥60分</span> (单项不低于60%)</div>
+        <div class="info-item"><span class="info-label">📅 考评比例</span> 理论1:20 · 实操1:5</div>
+    </div>
+
+    <!-- 双栏布局: 理论知识重点 + 实操技能框架 -->
+    <div class="grid-2">
+        <!-- 左侧：理论考点分布+模拟题 -->
+        <div class="card">
+            <div class="card-title">📚 理论考点 & 高频模块</div>
+            <table class="knowledge-table">
+                <tr><th>皮肤生理学</th><td>皮肤结构（表皮/真皮/皮下组织）、肤质分类（中性/干/油/混合/敏感）、pH值、皮脂膜功能[citation:4][citation:10]</td></tr>
+                <tr><th>卫生与消毒</th><td>物理消毒（紫外线/煮沸）、化学消毒（酒精/含氯消毒剂）、工具一人一换、美容院卫生管理条例[citation:4][citation:6]</td></tr>
+                <tr><th>化妆品知识</th><td>洁面/按摩膏/面膜/精华成分、选择原则、保质期与存储、常见成分功效（玻尿酸/烟酰胺）[citation:2][citation:4]</td></tr>
+                <tr><th>美容仪器</th><td>奥桑蒸汽仪、皮肤测试仪、超声波导入仪的使用流程、注意事项及清洁保养[citation:2][citation:6]</td></tr>
+                <tr><th>接待与咨询</th><td>服务项目介绍、顾客档案填写、皮肤分析、沟通礼仪及职业道德[citation:6][citation:9]</td></tr>
+                <tr><th>中医/经络基础</th><td>面部常用穴位（印堂/攒竹/迎香/颧髎等），按摩方向及功效[citation:4][citation:6]</td></tr>
+            </table>
+            <hr>
+            <div class="card-title" style="margin-top: 0.5rem;">📖 理论题型示例（初级高频）</div>
+            <!-- 模拟题  -->
+            <div class="question-block">
+                <div class="q-title">🔹 1.【单选题】中性皮肤的pH值范围通常是？</div>
+                <div>A. 4.5～5.5 &nbsp;&nbsp; B. 5.5～6.5 &nbsp;&nbsp; C. 6.5～7.5 &nbsp;&nbsp; D. 7.5～8.5</div>
+                <div class="answer">✅ 正确答案：B (中性皮肤pH 5.5~6.5，弱酸性)[citation:4]</div>
+            </div>
+            <div class="question-block">
+                <div class="q-title">🔹 2.【判断题】使用小气泡清洁仪时，应从最高吸力档位开始操作，以保证清洁效果。</div>
+                <div class="answer">❌ 错误。应从低档位开始，根据皮肤耐受度逐渐调整，避免损伤屏障[citation:7]。</div>
+            </div>
+            <div class="question-block">
+                <div class="q-title">🔹 3.【多选题】以下哪些属于深层清洁项目？（多选）</div>
+                <div>A. 小气泡深层清洁 &nbsp; B. 撕拉面膜 &nbsp; C. 超声波去角质 &nbsp; D. 基础洁面</div>
+                <div class="answer">✅ 答案：A、C (小气泡/超声波去角质属深层清洁；撕拉面膜易伤角质，但部分教材也提及；初级主要选仪器类)[citation:4]</div>
+            </div>
+            <div class="question-block">
+                <div class="q-title">🔹 4.【单选题】当超声波传入皮肤后，组织细胞间的振动摩擦使机械能变成____能。</div>
+                <div>A. 电 &nbsp; B. 热 &nbsp; C. 光 &nbsp; D. 磁</div>
+                <div class="answer">✅ 答案：B (机械能→热能，促进渗透)[citation:10]</div>
+            </div>
+            <div class="question-block">
+                <div class="q-title">🔹 5.【简答题】简述面部基础清洁的标准步骤及各步骤作用。</div>
+                <div class="answer">💡 参考：①卸妆（溶解油性污垢）；②温水湿润（打开毛孔）；③洁面乳打圈按摩（去除表面污物）；④清水冲洗干净；⑤冷毛巾/爽肤水收缩毛孔[citation:7]。</div>
+            </div>
+            <p style="font-size:0.75rem; color:#b48d6f; margin-top: 0.4rem;">※ 更多题库参考国家职业资格鉴定指导手册及历年真题[citation:3][citation:10]</p>
+        </div>
+
+        <!-- 右侧：实操考核重点 + 评分标准 -->
+        <div class="card">
+            <div class="card-title">💅 实操考核 · 初级技能核心</div>
+            <p><strong>⏱️ 考试时间：</strong> 90分钟 &nbsp;|&nbsp; <strong>分值构成：</strong> 面部基础护理（必考40~50分）+ 修饰美容/仪器操作（选考30分）+ 综合素养（仪容/卫生/沟通）[citation:4][citation:6]</p>
+            <div class="step-progress">
+                <div class="step"><div class="step-num">1</div> 准备&消毒<br>工具检查、酒精擦拭、口罩手套</div>
+                <div class="step"><div class="step-num">2</div> 卸妆清洁<br>眼唇卸妆+洁面乳打圈</div>
+                <div class="step"><div class="step-num">3</div> 去角质/分析<br>视肤质T区轻柔去角质</div>
+                <div class="step"><div class="step-num">4</div> 仪器蒸面<br>奥桑蒸汽仪8-10分钟</div>
+                <div class="step"><div class="step-num">5</div> 按摩手法<br>规定穴位及安抚提拉</div>
+                <div class="step"><div class="step-num">6</div> 敷面膜+结束<br>软膜/硬膜，保湿整理</div>
+            </div>
+            <h4 style="margin: 1rem 0 0.4rem 0; font-weight: 600;">🧴 面部护理评分要点（初级必考）</h4>
+            <ul style="margin-left: 1.2rem; color: #4b3621;">
+                <li>✔ 卸妆彻底、动作轻柔（眼唇专用卸妆液）</li>
+                <li>✔ 按摩手法：额部、眼周、面颊、下颌，常用穴位（攒竹、丝竹空、迎香、颊车等），力度均匀[citation:6]</li>
+                <li>✔ 敷面膜：厚薄适中，时间控制（软膜约15分钟），揭膜方向正确</li>
+                <li>✔ 卫生习惯：每客一换毛巾、消毒面盆、工具酒精消毒[citation:4][citation:8]</li>
+                <li>✔ 服务规范：礼貌接待，告知护理流程，询问舒适度</li>
+            </ul>
+            <hr>
+            <div class="card-title" style="margin-top: 0.2rem;">✍️ 修饰美容 · 初级选考项目</div>
+            <div class="skill-list">
+                <span class="skill-tag">💄 日妆造型</span>
+                <span class="skill-tag">✂️ 烫睫毛（冷烫）</span>
+                <span class="skill-tag">🧤 暂时性脱毛（蜜蜡/脱毛膏）</span>
+                <span class="skill-tag">💅 手部护理/甲型修饰</span>
+                <span class="skill-tag">🧖‍♀️ 仪器操作（奥桑蒸汽/皮肤测试仪）</span>
+            </div>
+            <p style="margin-top: 1rem;"><strong>📌 日妆考核要点：</strong> 根据脸型调整底色、眉眼唇自然和谐，粉底均匀，腮红位置正确，整体符合职业淡妆标准[citation:6][citation:9]。</p>
+            <p><strong>📌 烫睫毛流程：</strong> 卷杠选择→涂抹烫剂→停留时间控制→清洁定型，避免入眼[citation:9][citation:10]。</p>
+            <div class="question-block" style="background: #faf1e8;">
+                <div class="q-title">💡 实操扣分重灾区提醒</div>
+                <div>🔴 按摩时力度不均或遗漏穴位 &nbsp;|&nbsp; 🔴 仪器使用前未消毒探头 &nbsp;|&nbsp; 🔴 敷面膜时遮盖顾客口鼻未确认 &nbsp;|&nbsp; 🔴 脱毛方向错误导致毛囊炎[citation:4][citation:10]</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 国家职业技能标准 初级工作要求（表格精华） -->
+    <div class="card">
+        <div class="card-title">📌 国家职业标准 · 初级美容师职能要求</div>
+        <table class="knowledge-table" style="width:100%">
+            <thead>
+                <tr><th style="width:22%">职业功能</th><th style="width:38%">工作内容/技能要求</th><th>相关知识</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>接待与咨询</td><td>礼貌问候、引导入座、介绍服务项目；填写顾客资料登记表，皮肤初步分析[citation:6][citation:9]</td><td>美容院服务流程、皮肤类型判断</td></tr>
+                <tr><td>面部皮肤护理</td><td>清洁→去角质→按摩→敷膜→基础保养；正确选用护肤品及仪器[citation:6]</td><td>皮肤护理程序、穴位按摩、面膜分类</td></tr>
+                <tr><td>修饰美容</td><td>暂时性脱毛（蜜蜡/脱毛膏操作）、手部按摩护理、烫睫毛[citation:6][citation:9]</td><td>脱毛禁忌、手部穴位、烫睫毛药液掌控</td></tr>
+                <tr><td>化妆造型</td><td>完成日妆造型：调整肤色、眉、眼、唇修饰；符合日常职业或生活妆容[citation:6]</td><td>脸型修饰原理、化妆用具清洁方法</td></tr>
+                <tr><td>美容仪器</td><td>正确使用奥桑蒸汽仪、皮肤测试仪；操作后清洁保养并记录[citation:6][citation:7]</td><td>仪器功能原理、安全注意事项</td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top: 0.8rem; font-size: 0.85rem;">⭐ 依据《美容师国家职业技能标准（2018年版）》初级（五级）要求编制，所有考核均围绕以上模块进行[citation:6][citation:8]。</p>
+    </div>
+
+    <!-- 考试与备考建议 + 报考条件 -->
+    <div class="grid-2">
+        <div class="card">
+            <div class="card-title">📋 初级申报条件（符合其一即可）</div>
+            <ul style="margin-left: 1.3rem;">
+                <li>✅ 经本职业初级正规培训达规定标准学时数（通常不少于240学时），并取得结业证书[citation:8]；</li>
+                <li>✅ 连续从事本职业见习工作2年以上；</li>
+                <li>✅ 本职业学徒期满。</li>
+            </ul>
+            <div style="background: #faf3ec; border-radius: 1rem; padding: 0.8rem; margin-top: 1rem;">
+                💡 <strong>备考小贴士</strong>：理论刷题重点复习皮肤结构、消毒原则、仪器参数；实操反复模拟面部按摩和日妆流程，注意卫生细节，很多考生因未及时消毒而扣分[citation:4][citation:10]。
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">🗂️ 推荐学习资源 & 官方教材</div>
+            <p>📘 《美容师（初级）——国家职业技能等级认定培训教程》<br>中国就业培训技术指导中心 编写 / 中国劳动社会保障出版社[citation:3][citation:9]</p>
+            <p>📘 《国家职业技能鉴定考试指导手册·美容师（初级）》<br>涵盖理论题库及实操考核具体评分细则[citation:3]。</p>
+            <p>🌐 线上平台：人力资源和社会保障部职业技能在线平台、地方人社局公开美容师培训课程[citation:2]。</p>
+            <p>📝 建议结合本地鉴定中心发布的当年实操考核范围，针对性加强训练。</p>
+        </div>
+    </div>
+
+    <!-- 仪器&卫生 重要补充 -->
+    <div class="card">
+        <div class="card-title">🧼 卫生消毒&安全法规（理论高频考点）</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between;">
+            <div style="flex:1">
+                <h4 style="font-weight: 600;">✅ 物理消毒法</h4>
+                <p>煮沸消毒（100℃/15-20分钟）、紫外线灯照射、高压蒸汽灭菌（金属器械）[citation:4][citation:10]。</p>
+                <h4 style="font-weight: 600;">✅ 化学消毒法</h4>
+                <p>75%酒精擦拭仪器探头、含氯消毒液（500mg/L）浸泡毛巾、碘伏用于皮肤小破损[citation:10]。</p>
+            </div>
+            <div style="flex:1">
+                <h4 style="font-weight: 600;">⚠️ 美容师职业道德</h4>
+                <p>尊重顾客隐私、保护皮肤健康、操作前告知、不夸大宣传、持证上岗[citation:2][citation:6]。</p>
+                <h4 style="font-weight: 600;">📄 相关法规</h4>
+                <p>《美容美发业管理暂行办法》、《消费者权益保护法》——初级需了解基本法律常识[citation:4]。</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        🌟 基于《美容师国家职业标准》及各省鉴定中心公开资料整理，初级考证核心内容全覆盖。<br>
+        考证具体政策以当地职业技能鉴定中心通知为准，预祝顺利取得国家职业资格证书！
+    </footer>
+</div>
+</body>
+</html>
